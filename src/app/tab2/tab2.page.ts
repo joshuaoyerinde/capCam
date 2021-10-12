@@ -12,7 +12,10 @@ export class Tab2Page implements OnInit {
   snapPhotoToGallery(){
     this.photoService.addNewToGallery();
   }
-  ngOnInit():void{
+ async ngOnInit(){
+    await this.photoService.loadSaved();
+    // console.log(this.photoService.photos)
       // alert("am here ooo");
+      // console.log(this.photoService.addNewToGallery());
   }
 }
